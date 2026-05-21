@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusWire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="hero" data-view="landing">
+            <div class="hero-copy">
+                <img class="site-logo" src="logooo.png" alt="NexusWire logo">
+                <h1>Connect instantly with NexusWire</h1>
+                <p>Build your own animated messaging universe with chat, voice, video, statuses, and profile personalization all in one modern interface.</p>
+                <div class="hero-buttons">
+                    <button class="button-primary auth-action" data-action="signin">Sign In</button>
+                    <button class="button-secondary auth-action" data-action="signup">Create Account</button>
+                </div>
+            </div>
+            <div class="floating-messages">
+                <div class="floating-card">
+                    <h3>One-to-one chat</h3>
+                    <p>Fast messaging with typing indicators and read receipts, making conversations feel alive.</p>
+                </div>
+                <div class="floating-card">
+                    <h3>Group creation</h3>
+                    <p>Create groups, invite members, and manage roles with animated member cards.</p>
+                </div>
+                <div class="floating-card">
+                    <h3>Calls & media</h3>
+                    <p>Voice calls, video rooms, stickers, image sharing and file uploads are all part of the experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel view-hidden" data-view="auth">
+            <div class="login-card">
+                <h1 class="login-title">NexusWire</h1>
+                <form id="signin-form">
+                    <div class="field-group">
+                        <label for="username">Username</label>
+                        <input id="username" name="username" type="text" placeholder="Enter your username">
+                    </div>
+                    <div class="field-group">
+                        <label for="contact">Phone / Email</label>
+                        <input id="contact" name="contact" type="text" placeholder="Phone number or email address">
+                    </div>
+                    <div class="field-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="Enter your password">
+                    </div>
+                    <div class="forgot"><a href="#">Forgot password?</a></div>
+                    <div class="actions">
+                        <button type="submit" class="login-btn">Login</button>
+                        <button type="button" class="signup-btn auth-action" data-action="signup">Sign Up</button>
+                    </div>
+                </form>
+                <p class="note">Use your NexusWire account to sign in or create a new one.</p>
+            </div>
+        </section>
+
+        <section class="dashboard view-hidden" data-view="dashboard">
+            <div class="dashboard-grid">
+                <aside class="sidebar-card">
+                    <div class="profile-summary">
+                        <div class="avatar-circle">CW</div>
+                        <div class="profile-meta">
+                            <h4 id="profile-name">Guest</h4>
+                            <p id="profile-email">No email</p>
+                            <p id="profile-phone">No phone</p>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button data-main-view="dashboard">Chats</button>
+                        <button data-main-view="auth">Profile</button>
+                        <button data-main-view="landing">Landing</button>
+                        <button data-action="logout" class="logout-btn">Sign Out</button>
+                    </div>
+                    <div class="chats-list"></div>
+                </aside>
+
+                <section class="chat-card chat-window">
+                    <div class="chat-header">
+                        <div>
+                            <h3>Welcome to Chatty</h3>
+                            <p class="typing-indicator view-hidden">
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                                Typing...
+                            </p>
+                        </div>
+                        <span class="status-pill">Active</span>
+                    </div>
+                    <div class="message-area"></div>
+                    <form id="chat-send-form" class="chat-input-wrap">
+                        <input id="chat-input" type="text" placeholder="Send a message...">
+                        <button type="submit">Send</button>
+                    </form>
+                </section>
+
+                <aside class="activity-card">
+                    <h3>Profile & Status</h3>
+                    <div class="status-pill">Online</div>
+                    <div class="profile-statuses"></div>
+                    <div class="glass-card" style="margin-top: 1rem;">
+                        <h4>Edit profile</h4>
+                        <form id="profile-edit-form">
+                            <div class="field-group">
+                                <label for="edit-name">Name</label>
+                                <input id="edit-name" name="edit-name" type="text">
+                            </div>
+                            <div class="field-group">
+                                <label for="edit-email">Email</label>
+                                <input id="edit-email" name="edit-email" type="email">
+                            </div>
+                            <div class="field-group">
+                                <label for="edit-phone">Phone</label>
+                                <input id="edit-phone" name="edit-phone" type="tel">
+                            </div>
+                            <button class="submit-button" type="submit">Save profile</button>
+                        </form>
+                    </div>
+                    <div class="glass-card" style="margin-top: 1rem;">
+                        <h4>Add status</h4>
+                        <form id="status-add-form">
+                            <div class="field-group">
+                                <label for="status-label">Status type</label>
+                                <input id="status-label" name="status-label" type="text" placeholder="Available, Busy, Do not disturb">
+                            </div>
+                            <div class="field-group">
+                                <label for="status-text">Message</label>
+                                <input id="status-text" name="status-text" type="text" placeholder="What are you doing right now?">
+                            </div>
+                            <button class="submit-button" type="submit">Add status</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <aside class="toast"></aside>
+    <script src="app.js"></script>
+</body>
+</html>
