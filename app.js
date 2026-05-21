@@ -21,7 +21,7 @@ const sampleChats = [
         subtitle: '3 members',
         messages: [
             { sender: 'other', text: 'Group call after the launch? We can review stickers.', time: '1:09 PM' },
-            { sender: 'me', text: 'Yes, let’s jump in 20 minutes.', time: '1:11 PM' },
+            { sender: 'me', text: 'Yes, let's jump in 20 minutes.', time: '1:11 PM' },
         ],
     },
     {
@@ -259,7 +259,6 @@ function initAuthForms() {
         state.user = null;
         setView('landing');
         showToast('Signed out');
-    });
     });
 
     chatForm.addEventListener('submit', (event) => {
